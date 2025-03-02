@@ -51,7 +51,7 @@ const Experience = () => {
               <div className="absolute left-0 top-0 h-full w-0.5 bg-blue-200 dark:bg-blue-900"></div>
             )}
             {/* Timeline dot */}
-            <div className="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-blue-600"></div>
+            <div className="timeline-dot"></div>
             
             <div>
               <div className="flex justify-between items-center mb-2">

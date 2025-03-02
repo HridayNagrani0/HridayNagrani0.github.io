@@ -208,7 +208,7 @@ export const projects = [
   {
     title: "Tic-Tac-Toe with MyCobot and Yolov8",
     technologies: "Python, Pytorch, MyCobot",
-    githubLink: "https://github.com/HridayNagrani0/tictactoe-robot",
+    githubLink: "https://github.com/HridayNagrani0/MyCobot-YOLO",
     description: "Crafted and executed a comprehensive strategy to enhance user experience through real-time game object identification and precise move execution, utilizing advanced algorithms to achieve outstanding accuracy rates exceeding 90%"
   },
   {
@@ -233,7 +233,6 @@ export const projects = [
 
 export const contact = {
   email: "hnagrani@asu.edu",
-  phone: "+1-6237037724",
   linkedin: "https://linkedin.com/in/hridaynagrani",
   github: "https://github.com/HridayNagrani0"
 };
