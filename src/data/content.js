@@ -29,7 +29,9 @@ export const portfolioData = {
         company: "University/Company Name",
         duration: "Jan 2023 - Present",
         description: "Key responsibilities and achievements",
-        technologies: ["Technology 1", "Technology 2"]
+        technologies: ["Technology 1", "Technology 2"],
+        link: "https://actual-url-to-paper.com",
+        linkText: "View Paper"
       }
       // Add more experiences
     ],
@@ -157,7 +159,7 @@ export const experience = [
       "Developed an advanced AR/VR-based media player for a graduate-level semiconductor metrology course, leading to a 13% improvement in student engagement and understanding, in mid-semester evaluations",
       "Implemented networking and co-location features using Unity Netcode and Meta's Oculus Integration SDK, enabling real-time multi-user interactions and collaborative learning experiences within the XR application",
       "Developed end-to-end NDT timeline generation system which creates a timeline with 5-module handling, allowing students to navigate through modules in a non-linear sequence with integrated audio, subtitles, and markers for relevant navigation points",
-      "Presented IMPS (Immersive Media Player System) demo at HotMobile 2025, showcasing synchronized 360° media playback across multiple VR headsets with <10ms synchronization (<a href='https://dl.acm.org/doi/10.1145/3708468.3715683' target='_blank'>View Paper</a>)"
+      "Presented IMPS (Immersive Media Player System) demo at HotMobile 2025, showcasing synchronized 360° media playback across multiple VR headsets with <10ms synchronization [View Paper](https://dl.acm.org/doi/10.1145/3708468.3715683)"
     ]
   },
   {
@@ -168,7 +170,7 @@ export const experience = [
     technologies: "Python, PyTorch, TensorRT, NVIDIA Jetson",
     responsibilities: [
       "Fused Neuro-Symbolic approaches with Object Detection models to create Explainable AI (XAI) solutions, enhancing performance and interpretability, achieving a 30% increase in recall for geospatial imagery analysis",
-      "Secured Air Force/Space Force STTR Phase 1 contract for the research effort, as documented in W.P. Carey News (<a href='https://news.wpcarey.asu.edu/20240422-asu-startups-breakthrough-explainable-ai-secures-air-force-contract-reliable-transparent' target='_blank'>View Article</a>)",
+      "Secured Air Force/Space Force STTR Phase 1 contract for the research effort, as documented in W.P. Carey News [View Article](https://news.wpcarey.asu.edu/20240422-asu-startups-breakthrough-explainable-ai-secures-air-force-contract-reliable-transparent)",
       "Developed a comprehensive stress testing framework for comparative analysis of XAI vs. non-XAI models against various patch and camouflage attacks, utilizing Meta SAM 2 to simulate real-time camouflage for enhanced evaluation",
       "Optimized XAI models with custom post-inference processing on NVIDIA Jetson Xavier Orin, implementing TensorRT acceleration, quantization, and model pruning techniques that reduced model size by 40% while maintaining performance"
     ]
