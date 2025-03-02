@@ -22,15 +22,34 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '98793514-bf5c-4ec2-979f-bf7731a0d99d',
+          ...formData
+        }),
+      });
+
+      const data = await response.json();
       
-      // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        // Reset status after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -228,13 +247,23 @@ const Contact = () => {
               </motion.div>
               
               {/* Success/Error Message */}
-              {submitStatus === 'success' && (
+              {submitStatus && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`mt-4 p-3 rounded-md ${isDarkMode ? 'bg-cyber-neon/20 text-cyber-neon' : 'bg-cyberLight-neon/20 text-cyberLight-neon'} text-center`}
+                  className={`mt-4 p-3 rounded-md ${
+                    submitStatus === 'success'
+                      ? isDarkMode 
+                        ? 'bg-cyber-neon/20 text-cyber-neon' 
+                        : 'bg-cyberLight-neon/20 text-cyberLight-neon'
+                      : isDarkMode
+                        ? 'bg-red-500/20 text-red-400'
+                        : 'bg-red-500/20 text-red-500'
+                  } text-center`}
                 >
-                  Message sent successfully! I'll get back to you soon.
+                  {submitStatus === 'success' 
+                    ? "Message sent successfully! I'll get back to you soon."
+                    : "There was an error sending your message. Please try again."}
                 </motion.div>
               )}
             </form>

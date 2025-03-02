@@ -111,18 +111,42 @@ const Hero = () => {
                 
                 {/* Tech icons floating around */}
                 <motion.div 
-                  className="absolute top-0 -right-5 w-12 h-12 bg-cyber-dark p-2 rounded-full border border-cyber-cyan shadow-lg"
+                  className="absolute top-0 -right-5 w-12 h-12 bg-cyber-dark p-2 rounded-full border border-cyber-cyan shadow-lg flex items-center justify-center"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
-                  <img src="/ai-icon.svg" alt="AI" className="w-full h-full" />
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    className="w-8 h-8 text-cyber-cyan"
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="1.5"
+                  >
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
+                    <path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M16.3 5.6l-2.1 2.1M5.6 16.3l2.1-2.1" />
+                    <circle cx="12" cy="12" r="8" strokeDasharray="2 2" />
+                  </svg>
                 </motion.div>
                 <motion.div 
-                  className="absolute bottom-10 -left-8 w-12 h-12 bg-cyber-dark p-2 rounded-full border border-cyber-purple shadow-lg"
+                  className="absolute bottom-10 -left-8 w-12 h-12 bg-cyber-dark p-2 rounded-full border border-cyber-purple shadow-lg flex items-center justify-center"
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >
-                  <img src="/vr-icon.svg" alt="VR" className="w-full h-full" />
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    className="w-8 h-8 text-cyber-purple"
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="1.5"
+                  >
+                    <path d="M21 8H3a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z" />
+                    <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
+                    <circle cx="8" cy="12" r="2" />
+                    <circle cx="16" cy="12" r="2" />
+                  </svg>
                 </motion.div>
               </div>
             </div>

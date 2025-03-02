@@ -38,10 +38,10 @@ const Nav = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-1">
-            {['About', 'Education', 'Experience', 'Publications', 'Projects', 'Skills', 'Contact'].map((item, i) => (
+            {['About', 'Education', 'Experience', 'Publications', 'Projects', 'Skills', 'AR/VR Demo', 'Contact'].map((item, i) => (
               <motion.a 
                 key={i}
-                href={`#${item.toLowerCase()}`} 
+                href={`#${item.toLowerCase().replace('/', '').replace(' ', '-')}`} 
                 className="text-gray-300 hover:text-cyber-cyan px-3 py-2 rounded-md transition-colors duration-200 relative group"
                 whileHover={{ scale: 1.05 }}
               >
