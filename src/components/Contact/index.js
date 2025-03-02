@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { contact } from '../../data/content';
 
 const Contact = () => {
+  const [formData, setState] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  
+  const handleChange = (e) => {
+    setState({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Form submission logic would go here
+    console.log('Form submitted:', formData);
+    alert('Thank you for your message! I will get back to you soon.');
+    setState({ name: '', email: '', message: '' });
+  };
+  
   return (
     <div className="container mx-auto px-4 py-16" id="contact">
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
@@ -52,7 +73,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-gray-700 dark:text-gray-300 mb-2" htmlFor="name">
                   Name
@@ -60,6 +81,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
@@ -71,6 +94,8 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
@@ -82,6 +107,8 @@ const Contact = () => {
                 <textarea
                   id="message"
                   rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 ></textarea>

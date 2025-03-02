@@ -1,11 +1,17 @@
 import React from 'react';
 import { bio } from '../../data/content';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
     <div className="container mx-auto px-4 py-16" id="about">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+        <motion.div 
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">
             About Me
           </h2>
@@ -21,7 +27,7 @@ const About = () => {
             </div>
 
             {/* Highlights/Key Points */}
-            <div className="mt-8">
+            <div>
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
                 Highlights
               </h3>
@@ -52,7 +58,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -8,22 +8,30 @@ import Publications from './components/Publications';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
+import { ThemeProvider } from './context/ThemeContext';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Nav />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Education />
-        <Experience />
-        <Publications />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-    </div>
+    <ThemeProvider>
+      <ErrorBoundary>
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+          <Nav />
+          <main>
+            <Hero />
+            <About />
+            <Education />
+            <Experience />
+            <Publications />
+            <Projects />
+            <Skills />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </ErrorBoundary>
+    </ThemeProvider>
   );
 }
 
